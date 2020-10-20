@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Competição de carrinhos de rolimã</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="./js/corrida.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Atividade <b>Prática </b> 01</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="01-corrida.html">Corrida <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="02-imc.html">IMC</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="03-calculadora.html">Calculadora</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="04-escala.html">Escala</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+
+
+
+    <header class="">
+        <h1>Competição de carrinhos de rolimã</h1>
+        <h5>Digite os nomes dos competidores e os respectivos tempos, caso sejam menos de 6 competidores apenas deixe os campos em branco</h5>
+    </header>
+
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+
+            <caption>Tabela 01 - Dados</caption>
+
+            <thead>
+
+                <tr class="thead-dark">
+                    <th>Largada</th>
+                    <th>Competidor(a)</th>
+                    <th>Tempo(s)</th>
+
+
+                </tr>
+            </thead>
+            <form name="dados">
+                <tbody>
+
+                    <tr id="alerta">
+                        <td>1</td>
+                        <td><input type="text" name="nome" id="nome1" placeholder="Digite o nome do competidor 1" class="form-control">
+                            <div id="alerta1" class="alert alert-danger" style="display: none">
+                                <span>Insira pelo menos um competidor!</span>
+                            </div>
+                        </td>
+                        <td><input type="number" name="tempo" id="tempo1" placeholder="Digite o tempo em segundos" class="form-control">
+                            <div id="alerta2" class="alert alert-danger" style="display: none">
+                                <span>Insira pelo menos um tempo!</span>
+                            </div>
+                        </td>
+
+
+
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td><input type="text" name="nome" id="nome2" placeholder="Digite o nome do competidor 2" class="form-control"></td>
+                        <td><input type="number" name="tempo" id="tempo2" placeholder="Digite o tempo em segundos" class="form-control"></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td><input type="text" name="nome" id="nome3" placeholder="Digite o nome do competidor 3" class="form-control"></td>
+                        <td><input type="number" name="tempo" id="tempo3" placeholder="Digite o tempo em segundos" class="form-control"></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td><input type="text" name="nome" id="nome4" placeholder="Digite o nome do competidor 4" class="form-control"></td>
+                        <td><input type="number" name="tempo" id="tempo4" placeholder="Digite o tempo em segundos" class="form-control"></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td><input type="text" name="nome" id="nome5" placeholder="Digite o nome do competidor 5" class="form-control"></td>
+                        <td><input type="number" name="tempo" id="tempo5" placeholder="Digite o tempo em segundos" class="form-control"></td>
+
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><input type="text" name="nome" id="nome6" placeholder="Digite o nome do competidor 6" class="form-control"></td>
+                        <td><input type="number" name="tempo" id="tempo6" placeholder="Digite o tempo em segundos" class="form-control"></td>
+
+                    </tr>
+
+                </tbody>
+
+                <tfoot>
+
+                    <tr>
+                        <td colspan="2">Quantidade máxima de competidores: </td>
+                        <td colspan="1">6</td>
+
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><input type="submit" value="Calcular" class="btn btn-success" onclick="calcula();return false;"></td>
+                        <td colspan="1"><input type="reset" value="Limpar" class="btn btn-danger" onclick="limpa();"></td>
+
+                    </tr>
+
+                </tfoot>
+            </form>
+        </table>
+    </div>
+
+    <div class="table-responsive" style="display: none" id="resultado">
+        <table class="table table-bordered table-hover table-striped">
+
+            <caption>Tabela 02 - Respostas</caption>
+
+            <thead>
+
+                <tr class="thead-dark">
+                    <th>Posição</th>
+                    <th>Largada</th>
+                    <th>Competidor(a)</th>
+                    <th>Tempo(s)</th>
+                    <th>Resultado</th>
+
+
+                </tr>
+            </thead>
+            <form name="dados2">
+                <tbody>
+
+                    <tr>
+                        <td>
+                            <p id="presp0"></p>
+                        </td>
+                        <td>
+                            <p id="lresp0"></p>
+                        </td>
+                        <td>
+                            <p id="resp0"></p>
+                        </td>
+                        <td>
+                            <p id="tresp0"></p>
+                        </td>
+                        <td>
+                            <div id="mostra0" style="display: none">Vencedor!</div>
+                        </td>
+
+
+
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p id="presp1"></p>
+                        </td>
+                        <td>
+                            <p id="lresp1"></p>
+                        </td>
+                        <td>
+                            <p id="resp1"></p>
+                        </td>
+                        <td>
+                            <p id="tresp1"></p>
+                        </td>
+                        <td>
+                            <div id="mostra1" style="display: none">Vencedor!</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p id="presp2"></p>
+                        </td>
+                        <td>
+                            <p id="lresp2"></p>
+                        </td>
+                        <td>
+                            <p id="resp2"></p>
+                        </td>
+                        <td>
+                            <p id="tresp2"></p>
+                        </td>
+                        <td>
+                            <div id="mostra2" style="display: none">Vencedor!</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p id="presp3"></p>
+                        </td>
+                        <td>
+                            <p id="lresp3"></p>
+                        </td>
+                        <td>
+                            <p id="resp3"></p>
+                        </td>
+                        <td>
+                            <p id="tresp3"></p>
+                        </td>
+                        <td>
+                            <div id="mostra3" style="display: none">Vencedor!</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p id="presp4"></p>
+                        </td>
+                        <td>
+                            <p id="lresp4"></p>
+                        </td>
+                        <td>
+                            <p id="resp4"></p>
+                        </td>
+                        <td>
+                            <p id="tresp4"></p>
+                        </td>
+                        <td>
+                            <div id="mostra4" style="display: none">Vencedor!</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p id="presp5"></p>
+                        </td>
+                        <td>
+                            <p id="lresp5"></p>
+                        </td>
+                        <td>
+                            <p id="resp5"></p>
+                        </td>
+                        <td>
+                            <p id="tresp5"></p>
+                        </td>
+                        <td>
+                            <div id="mostra5" style="display: none">Vencedor!</div>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+
+
+                </tfoot>
+            </form>
+        </table>
+    </div>
+
+    <footer class=" navbar bg-primary">
+        <div>
+            <p>Sistemas Web I - Atividade Prática - Icaro Quintão EC-14.1.8083</p>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
